@@ -8,12 +8,12 @@
         <!-- stack for played cards -->
         <img *ngFor="let card of game.playedCards" src="assets/img/cards/{{ card }}.png" alt="" class="played-card">
         <!-- current picked card animation -->
-        <img (click)="pickCard()" *ngIf="pickCardAnimation" class="pick-card" style="right: 25px;"  src="assets/img/cards/{{ currentCard }}.png" alt="">
+        <img (click)="pickCard()" *ngIf="game.pickCardAnimation" class="pick-card" style="right: 25px;"  src="assets/img/cards/{{ game.currentCard }}.png" alt="">
         
     </div>
 </div>
 
-<app-game-info [card]="currentCard" class="game-info"></app-game-info>
+<app-game-info [card]="game.currentCard" class="game-info"></app-game-info>
 
 <button mat-fab  (click)="openDialog()" class="button-add">
     <mat-icon>add</mat-icon>
