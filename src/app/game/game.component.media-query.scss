@@ -1,0 +1,41 @@
+@media (max-width: 720px) {
+    .hide-desktop {
+        display: none;
+    }
+    .card-stack {
+        margin-left: -60px;
+        img {
+            width: 80px;
+            height: 140px;
+        }
+    }
+    .played-card {
+        right: 25px;
+        transform: scale(1.3) translateX(120px) translateY(-110px) rotate(-10deg);
+    }
+    .game-info {
+        left: 0;
+        right: 0;
+    }
+    .button-add {
+        bottom: 160px;
+    }
+    .pick-card {
+        animation: pick-card-animation-mobile 1.1s ease-in-out;
+        transform: scale(1.3) translateX(120px) translateY(-110px) rotate(-10deg);
+    }
+}
+
+
+@media (min-width: 720px) {
+    .hide-mobile {
+        display: none;
+    }
+}
+
+
+@media (max-height: 800px) {
+    .player-div {
+        max-height: 380px;
+    }
+}

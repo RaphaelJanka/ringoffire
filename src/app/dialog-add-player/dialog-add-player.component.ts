@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -6,15 +6,14 @@ import { MatDialogRef } from '@angular/material/dialog';
   templateUrl: './dialog-add-player.component.html',
   styleUrls: ['./dialog-add-player.component.scss']
 })
-export class DialogAddPlayerComponent implements OnInit{
+export class DialogAddPlayerComponent {
   name: any = '';
   constructor(public dialogRef: MatDialogRef<DialogAddPlayerComponent>) {}
 
-  ngOnInit(): void {
-    
-  }
 
-  
+  /**
+   * Closes the dialog without taking any specific action.
+   */
   onNoClick() {
     this.dialogRef.close();
   }

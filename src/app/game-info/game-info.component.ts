@@ -1,11 +1,11 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-game-info',
   templateUrl: './game-info.component.html',
   styleUrls: ['./game-info.component.scss']
 })
-export class GameInfoComponent implements OnInit, OnChanges {
+export class GameInfoComponent implements OnChanges {
 
   cardAction = [
     { title: 'Waterfall', description: 'Everyone has to start drinking at the same time. As soon as player 1 stops drinking, player 2 may stop drinking. Player 3 may stop as soon as player 2 stops drinking, and so on.' },
@@ -29,10 +29,14 @@ export class GameInfoComponent implements OnInit, OnChanges {
   @Input() card!: string;
   constructor() { }
 
-  ngOnInit(): void {
-   
-  }
 
+/**
+ * Responds to changes in the 'card' input property by updating title and description properties.
+ *
+ * This method is triggered when the 'card' input property changes. It parses the card string to
+ * determine the card number, and then updates the 'title' and 'description' properties based on
+ * the card number's corresponding action details.
+ */
   ngOnChanges() {
     if (this.card) {
       let cardNumber = +this.card.split('_')[1];

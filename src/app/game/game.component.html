@@ -1,14 +1,25 @@
-<app-player *ngFor="let player of game.players; let i = index" [ngStyle]="{ 'top.px': 50 + (i*90)}" 
-[playerActive]=" i == game.currentPlayer" class="profile-position" style="top:120px" [name]="player"></app-player>
+<section class="player-container hide-desktop">
+    <div class="player-div">
+        <app-player *ngFor="let player of game.players; let i = index" [ngStyle]="{ 'top.px': 50 + (i*90)}" 
+        [playerActive]=" i == game.currentPlayer" class="profile-position" [name]="player"></app-player>
+    </div>
+</section>
+    
+<section class="player-mobile-container hide-mobile">
+    <div class="player-mobile-div">
+        <app-player-mobile *ngFor="let player of game.players; let i = index" [ngStyle]="{ 'top.px': 50 + (i*90)}" 
+        [playerActive]=" i == game.currentPlayer" class="profile-position" [name]="player"></app-player-mobile>
+    </div>
+</section>
 <div class="field">
     <div class="card-stack">
         <!-- card stack -->
-        <img [ngStyle]="{ 'right.px': i * 5 }" *ngFor="let c of [0, 1, 2, 3]; let i = index;" src="assets/img/cards/card_cover.png" alt="">
-        <img (click)="pickCard()" class="top-card" style="right: 25px;"  src="assets/img/cards/card_cover.png" alt="">
+        <img class="stack" [ngStyle]="{ 'right.px': i * 5 }" *ngFor="let c of [0, 1, 2, 3]; let i = index;" src="assets/img/cards/card_cover.jpg" alt="">
+        <img (click)="pickCard()" class="top-card" style="right: 25px;"  src="assets/img/cards/card_cover.jpg" alt="">
         <!-- stack for played cards -->
-        <img *ngFor="let card of game.playedCards" src="assets/img/cards/{{ card }}.png" alt="" class="played-card">
+        <img *ngFor="let card of game.playedCards" src="assets/img/cards/{{ card }}.jpg" alt="" class="played-card">
         <!-- current picked card animation -->
-        <img (click)="pickCard()" *ngIf="game.pickCardAnimation" class="pick-card" style="right: 25px;"  src="assets/img/cards/{{ game.currentCard }}.png" alt="">
+        <img (click)="pickCard()" *ngIf="game.pickCardAnimation" class="pick-card" style="right: 25px;"  src="assets/img/cards/{{ game.currentCard }}.jpg" alt="">
         
     </div>
 </div>

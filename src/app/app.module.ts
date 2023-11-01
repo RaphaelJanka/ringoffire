@@ -19,6 +19,9 @@ import { MatCardModule } from '@angular/material/card';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { DialogRestartComponent } from './dialog-restart/dialog-restart.component';
+import { PlayerMobileComponent } from './player-mobile/player-mobile.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,9 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     GameComponent,
     PlayerComponent,
     DialogAddPlayerComponent,
-    GameInfoComponent
+    GameInfoComponent,
+    DialogRestartComponent,
+    PlayerMobileComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +45,7 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     MatInputModule,
     MatFormFieldModule,
     MatCardModule,
+    MatSnackBarModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore())
   ],
